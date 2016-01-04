@@ -3,7 +3,7 @@
 		<%= @row['content'] %>
 		<br/ >	
 		<br/ >	
-		Сотворено <%= @row['created_date'] %>
+		Сотворено <%= @row['created_date'] %> автором <%= @row['author'] %>
 		<br/ >	
 		<br/ >			
 	</p>
@@ -14,7 +14,7 @@
 		<%= comment['content'] %>
 		<br/ >	
 		<br/ >	
-		<span style="font-size: 75%; color: #999"> Добавлено <%= comment['created_date'] %> </span>
+		<span style="font-size: 75%; color: #999"> Добавлено <%= comment['created_date'] %>  автором <%= comment['author'] %></span>
 		<br/ >			
 	</p>
 	<hr/ >
@@ -22,8 +22,14 @@
 <h4>Добавьте свой комментарий:</h4>	
 <p>
 	<form action="/details/<%= @row['id'] %>" method="POST" role="form">
-	  <textarea name="content" class="form-control" rows="6" placeholder="Введите вашу мысль"></textarea>
-	  <br/ >
-	  <button type="submit" class="btn btn-primary">Yarr!</button>
+		<div class="form-group">
+    		<label>Представьтесь, пожалуйста:</label>
+    		<input name="author" type="text" class="form-control" placeholder="Ваше имя">
+  		</div>
+  		<div class="form-group">
+  			<label>Ваш комментарий:</label>
+	    	<textarea name="content" class="form-control" rows="6" placeholder="Введите вашу мысль"></textarea>
+	    </div>
+	    <button type="submit" class="btn btn-primary">Yarr!</button>
 	</form>
 </p>
