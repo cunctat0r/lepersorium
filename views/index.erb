@@ -1,1 +1,11 @@
 <h2>Главная страница</h2>
+<br/ >
+<% @results.each do |post| %>
+	<p>
+		<%= post['content'] %>
+		<br/ >	
+		<br/ >	
+		Сотворено <%= post['created_date'] %>
+	</p>
+	<hr/ >
+<% end %>
