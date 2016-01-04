@@ -7,7 +7,19 @@
 		<br/ >	
 		<br/ >			
 	</p>
-<h4>Ценные комментарии:</h4>	
+<h4>Ценные комментарии:</h4>
+<br/ >
+<% @comments.each do |comment| %>
+	<p>
+		<%= comment['content'] %>
+		<br/ >	
+		<br/ >	
+		<span style="font-size: 75%; color: #999"> Добавлено <%= comment['created_date'] %> </span>
+		<br/ >			
+	</p>
+	<hr/ >
+<% end %>	
+<h4>Добавьте свой комментарий:</h4>	
 <p>
 	<form action="/details/<%= @row['id'] %>" method="POST" role="form">
 	  <textarea name="content" class="form-control" rows="6" placeholder="Введите вашу мысль"></textarea>
