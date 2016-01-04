@@ -7,4 +7,11 @@
 		<br/ >	
 		<br/ >			
 	</p>
-	<hr/ >
+<h4>Comments:</h4>	
+<p>
+	<form action="/details/<%= @row['id'] %>" method="POST" role="form">
+	  <textarea name="content" class="form-control" rows="6" placeholder="Введите вашу мысль"></textarea>
+	  <br/ >
+	  <button type="submit" class="btn btn-primary">Yarr!</button>
+	</form>
+</p>
